@@ -32,3 +32,10 @@ void Library::Donate(const Book b, const int num_copies)
     this->shelf_.push_back(b);
   }
 }
+
+std::ostream& operator<<(std::ostream& os, const Book& book) {
+  os << "-----------------------------------------------------" << std:: endl;
+  os << "Book Title: " << book.title << ", Book Author: " << book.author << std::endl;
+  os << "-----------------------------------------------------" << std:: endl;
+  return os;
+}

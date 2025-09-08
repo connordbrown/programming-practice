@@ -13,6 +13,9 @@ struct Book
 
 };
 
+// << operator overload
+std::ostream& operator<<(std::ostream& os, const Book& book);
+
 class Library
 {
   public:

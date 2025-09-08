@@ -18,6 +18,8 @@ int main()
   Book book1 = {"Moby Dick", "Herman Melville"};
   Book book2 = {"Frankenstein", "Mary Shelley"};
 
+  std::cout << book1 << std::endl;
+
   std::cout << "Title: " << book1.title << std::endl;
   std::cout << "Author: " << book1.author << std::endl;
 
