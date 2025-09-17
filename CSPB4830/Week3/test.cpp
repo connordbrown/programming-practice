@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "functions_to_implement.cpp"
 #include <vector>
+#include <cctype>
 
 TEST_CASE ( "Factorials are computed", "[factorial]") // tag
 {
@@ -45,7 +46,20 @@ TEST_CASE("splitting string on separator into vector of strings", "[Split]")
 	std::string s = ",This string, written for testing, but not for clarity, is hard to read.,";
 
 	std::vector<std::string> v = {"", "This string", " written for testing", " but not for clarity", " is hard to read."};
+
 	std::vector<std::string> test_vec = Split(s, ",");
 	REQUIRE(test_vec == v);
 }
 
+TEST_CASE("removing the first occurrence of second string from first string", "[RemoveFirstSubstring]")
+{
+	std::string s1 = "I willfully will write a will.";
+	std::string s2 = "will willfully wrote a will.";
+	std::string s3 = "will";
+
+	std::string test1 = RemoveFirstSubstring(s1, s3);
+	REQUIRE(test1 == "I fully will write a will.");
+
+	std::string test2 = RemoveFirstSubstring(s2, s3);
+	REQUIRE(test2 == " willfully wrote a will.");
+}

@@ -151,10 +151,26 @@ std::vector<std::string> Split(std::string whole, std::string separator)
 	return string_vector;
 }
 
-// takes two strings and returns a new string that is the result of removing all occurrences of s2 from s1.
-std::string RemoveAllSubstrings(std::string s1, std::string s2)
+// takes two strings and returns a new string that is the result of removing the first occurrence of s2 from s1.
+std::string RemoveFirstSubstring(std::string s1, std::string s2)
 {
-	
+	std::string new_string = "";
+
+	std::size_t found = s1.find(s2);
+	// s2 at beginning
+	if (found == 0)
+	{
+		found += s2.size();
+		new_string += s1.substr(found, std::string::npos);
+	}
+	// s2 anywhere else
+	else
+	{
+		new_string += s1.substr(0, found);
+		found += s2.size();
+		new_string += s1.substr(found, std::string::npos);
+	}
+	return new_string;
 }
 
 
