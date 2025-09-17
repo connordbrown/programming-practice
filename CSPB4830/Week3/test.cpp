@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "main.cpp"
+#include "functions_to_implement.cpp"
 #include <vector>
 
 TEST_CASE ( "Factorials are computed", "[factorial]") // tag
@@ -38,5 +38,14 @@ TEST_CASE("incrementing values in integer vector", "[addN]")
 		REQUIRE( res[v.size()-1] == 5 );
 		REQUIRE(res[random] == v[random]+n);
 	}
-
 }
+
+TEST_CASE("splitting string on separator into vector of strings", "[Split]")
+{
+	std::string s = ",This string, written for testing, but not for clarity, is hard to read.,";
+
+	std::vector<std::string> v = {"", "This string", " written for testing", " but not for clarity", " is hard to read."};
+	std::vector<std::string> test_vec = Split(s, ",");
+	REQUIRE(test_vec == v);
+}
+

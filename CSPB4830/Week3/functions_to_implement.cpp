@@ -130,16 +130,44 @@ std::vector<int> AddN(std::vector<int> v, int n)
 	return v;
 }
 
+// splits a single string on separator into a vector of strings
+std::vector<std::string> Split(std::string whole, std::string separator)
+{
+	std::vector<std::string> string_vector;
+	std::string accum_string = "";
+
+	for (unsigned int i = 0; i < whole.size(); ++i)
+	{
+		if (whole.substr(i, 1) != separator)
+		{
+			accum_string += whole.substr(i, 1);
+		}
+		else
+		{
+			string_vector.push_back(accum_string);
+			accum_string.clear();
+		}
+	}
+	return string_vector;
+}
+
+// takes two strings and returns a new string that is the result of removing all occurrences of s2 from s1.
+std::string RemoveAllSubstrings(std::string s1, std::string s2)
+{
+	
+}
+
+
 // ====================================================================
 
-int main()
-{
-	std::cout << Factorial (5) <<std::endl; // printing the value
-	// assert(Factorial(0) == 1) // cassert
-	std::vector<int> v{1,2,3};
-	std::vector<int> res = AddN(v, 5);
-	for(int i=0;i<res.size();i++)
-	{
-		std::cout<<res[i]<<" ";
-	}
-}
+// int main()
+// {
+// 	std::cout << Factorial (5) <<std::endl; // printing the value
+// 	// assert(Factorial(0) == 1) // cassert
+// 	std::vector<int> v{1,2,3};
+// 	std::vector<int> res = AddN(v, 5);
+// 	for(int i=0;i<res.size();i++)
+// 	{
+// 		std::cout<<res[i]<<" ";
+// 	}
+// }
