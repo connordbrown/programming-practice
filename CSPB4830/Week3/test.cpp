@@ -63,3 +63,15 @@ TEST_CASE("removing the first occurrence of second string from first string", "[
 	std::string test2 = RemoveFirstSubstring(s2, s3);
 	REQUIRE(test2 == " willfully wrote a will.");
 }
+
+TEST_CASE("joining all strings in a vector together using glue string in between them", "[Join]")
+{
+	std::vector<std::string> v1 = {"This string", " written for testing", " but not for clarity", " is hard to read."};
+	std::vector<std::string> v2 = {"I", " (name)", " am writing a short", " short", " string."};
+
+	std::string test1 = Join(v1, ",");
+	REQUIRE(test1 == "This string, written for testing, but not for clarity, is hard to read.");
+
+	std::string test2 = Join(v2, ",");
+	REQUIRE(test2 == "I, (name), am writing a short, short, string.");
+}

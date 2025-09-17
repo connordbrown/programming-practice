@@ -140,7 +140,7 @@ std::vector<std::string> Split(std::string whole, std::string separator)
 	{
 		if (whole.substr(i, 1) != separator)
 		{
-			accum_string += whole.substr(i, 1);
+			accum_string.append(whole.substr(i, 1));
 		}
 		else
 		{
@@ -169,6 +169,24 @@ std::string RemoveFirstSubstring(std::string s1, std::string s2)
 		new_string += s1.substr(0, found);
 		found += s2.size();
 		new_string += s1.substr(found, std::string::npos);
+	}
+	return new_string;
+}
+
+// joins all strings in a vector together, using the glue string in between them
+std::string Join(std::vector<std::string> pieces, std::string glue)
+{
+	std::string new_string = "";
+
+	for (std::vector<std::string>::iterator it = pieces.begin(); it != pieces.end(); ++it)
+	{
+		new_string.append(*it);
+
+		// handle edge case
+		if (it != pieces.end() - 1)
+		{
+			new_string.append(glue);
+		}
 	}
 	return new_string;
 }
