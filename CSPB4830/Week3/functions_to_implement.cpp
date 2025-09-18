@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <unordered_set>
+
 /* String functions section */
 
 // Splits a single string on separator into a vector of strings
@@ -189,6 +191,25 @@ std::string Join(std::vector<std::string> pieces, std::string glue)
 		}
 	}
 	return new_string;
+}
+
+// takes two vectors of integers, a and b. The function then removes elements from a if they are also in b.
+// if the integer is in b, but not in a, nothing happens.
+std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b)
+{
+	std::vector<int> new_vector;
+	std::unordered_set<int> b_set(b.begin(), b.end());
+
+	for (std::vector<int>::iterator it = a.begin(); it != a.end(); ++it)
+	{
+		// skip if *it is in b_set
+		if (b_set.find(*it) != b_set.end())
+		{
+			continue;
+		}
+		new_vector.push_back(*it);
+	}
+	return new_vector;
 }
 
 // returns a vector with true for numbers less than the second parameters and false for those greater than or equal to

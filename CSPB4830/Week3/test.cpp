@@ -2,7 +2,6 @@
 #include "catch.hpp"
 #include "functions_to_implement.cpp"
 #include <vector>
-#include <cctype>
 
 TEST_CASE ( "Factorials are computed", "[factorial]") // tag
 {
@@ -82,6 +81,17 @@ TEST_CASE("creating a vector with true for numbers less than given value and fal
 	double less_val = 4.8;
 	std::vector<bool> test_vec = {true, true, true, false, false, false, false};
 
-	std::vector<bool> test1 = LessMask(num_vec, less_val);
-	REQUIRE(test1 == test_vec);
+	std::vector<bool> test = LessMask(num_vec, less_val);
+	REQUIRE(test.size() == test_vec.size());
+	REQUIRE(test == test_vec);
+}
+
+TEST_CASE("takes two vectors of integers, removes elements from first vector if they are also in second vector", "[MatchVectors]")
+{
+	std::vector<int> a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	std::vector<int> b = {1, 2, 8, 9, 10, 11, 12, 13};
+	std::vector<int> test_vec = {3, 4, 5, 6, 7};
+
+	std::vector<int> test = MatchVectors(a, b);
+	REQUIRE(test == test_vec);
 }
