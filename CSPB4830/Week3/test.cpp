@@ -75,3 +75,13 @@ TEST_CASE("joining all strings in a vector together using glue string in between
 	std::string test2 = Join(v2, ",");
 	REQUIRE(test2 == "I, (name), am writing a short, short, string.");
 }
+
+TEST_CASE("creating a vector with true for numbers less than given value and false for those greater than or equal to value", "[LessMask]")
+{
+	std::vector<double> num_vec = {1.0, 2.5, 3, 4.8, 7, 9.1, 10};
+	double less_val = 4.8;
+	std::vector<bool> test_vec = {true, true, true, false, false, false, false};
+
+	std::vector<bool> test1 = LessMask(num_vec, less_val);
+	REQUIRE(test1 == test_vec);
+}

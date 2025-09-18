@@ -191,6 +191,22 @@ std::string Join(std::vector<std::string> pieces, std::string glue)
 	return new_string;
 }
 
+// returns a vector with true for numbers less than the second parameters and false for those greater than or equal to
+std::vector<bool> LessMask(std::vector<double> nums, double less_than)
+{
+	std::vector<bool> mask_vector;
+	for (std::vector<double>::iterator it = nums.begin(); it != nums.end(); ++it)
+	{
+		if (*it < less_than) {
+			mask_vector.push_back(true);
+		}
+		else 
+		{
+			mask_vector.push_back(false);
+		}
+	}
+	return mask_vector;
+}
 
 // ====================================================================
 
