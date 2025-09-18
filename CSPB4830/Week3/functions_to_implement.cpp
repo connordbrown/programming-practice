@@ -218,7 +218,8 @@ std::vector<bool> LessMask(std::vector<double> nums, double less_than)
 	std::vector<bool> mask_vector;
 	for (std::vector<double>::iterator it = nums.begin(); it != nums.end(); ++it)
 	{
-		if (*it < less_than) {
+		if (*it < less_than) 
+		{
 			mask_vector.push_back(true);
 		}
 		else 
