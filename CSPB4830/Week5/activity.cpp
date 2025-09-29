@@ -44,6 +44,10 @@ int main()
   std::cout << cow.MakeSound() << std::endl;
   std::cout << cow.get_power() << std::endl;
 
+  Reptile crocodile("snap");
+  std::cout << crocodile.MakeSound() << std::endl;
+  std::cout << crocodile.get_power() << std::endl;
+
   Alligator louis("hiss", 'u');
   std::cout << louis.MakeSound() << std::endl;
   std::cout << louis.get_power() << std::endl;
