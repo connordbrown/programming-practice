@@ -42,7 +42,7 @@ int main() {
     class Conifer: public Tree
     {
     public:
-        void Seed() { number_seeds_ += 2; };
+        void Seed() override { number_seeds_ += 2; };
     private:
         std::string cone_type_;
     };
