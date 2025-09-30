@@ -37,7 +37,7 @@ int main() {
     // Write adequate code to experiment how the static field changes when calling Seed() with your regular Trees versus with the derived class that you implemented.
     // Don't forget the keyword virtual and remember that you shouldn't add a new field to your Tree subclass to accomplish this!
 
-    // The static field changes regardless of the calling class. 
+    // The static field increases by one for Seed() calls by base class, and increases by two for Seed() calls by subclass.
 
     class Conifer: public Tree
     {
