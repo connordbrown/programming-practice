@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Earth.h"
 
-// Name: 
+// Name: Connor Brown
 
 int main(int argc, char **argv)
 {

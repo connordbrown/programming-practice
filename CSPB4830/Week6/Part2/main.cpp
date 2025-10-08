@@ -3,7 +3,7 @@
 #include "Characteristic.h"
 #include "Avatar.h"
 
-// Name: 
+// Name: Connor Brown
 
 
 int main()
