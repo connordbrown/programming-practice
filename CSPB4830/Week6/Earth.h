@@ -12,14 +12,15 @@ class Earth
 			return instance;
 		}
 
-    int get_population() { return population_; };
-    void IncreasePopulation() { population_ += 1; };
+		int get_population() { return population_; };
+		void IncreasePopulation() { population_ += 1; };
 
 		// Delete the methods we don't want
 		Earth(Earth const&) = delete; // copy constructor
 		void operator=(Earth const&) = delete; // assignment operator
 
-    static const int NUM_CONTINENTS;
+		static const int NUM_CONTINENTS;
+		static const int NUM_MOONS;
 
  	private:
 	 	Earth();  // private constructor

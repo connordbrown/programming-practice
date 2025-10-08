@@ -3,6 +3,7 @@
 #include "Earth.h"
 
 const int Earth::NUM_CONTINENTS = 7;
+const int Earth::NUM_MOONS = 1;
 
 Earth::Earth()
 {
