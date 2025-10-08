@@ -10,6 +10,7 @@ int main()
 {
   // Part 1 (factory)
   // Questions 0, 1, 2, 3 are in Characteristic.h
+  
   // 4) get pointers to one of each type of your Characteristic objects via your CharacteristicFactory. // Then, call the Characteristic's get_count method to see how many Characteristic objects have been instantiated.
 
   // 5) are your CharacteristicFactory's Get____() methods static or non-static? Do you think that they should be one or the other? Justify your answer.

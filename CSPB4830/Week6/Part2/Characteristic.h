@@ -19,7 +19,10 @@ class Characteristic
         isInherited_(isInherited),
         strength_(strength),
         adaptability_(adaptability),
-        stability_(stability) {}
+        stability_(stability) {
+          // increment field_counter_ each time a Characteristic is instantiated
+          field_counter_ += 1;
+        }
 
     std::string get_characteristicName() const { return characteristicName_; }
     bool get_isTransferable() const { return isTransferable_; }
@@ -30,6 +33,8 @@ class Characteristic
 
     friend std::ostream& operator<<(std::ostream &os, const Characteristic &c);
 
+    static int get_count() { return field_counter_; }
+
   private:
     std::string characteristicName_;
     bool isTransferable_;  // Whether the characteristic can be transferred
@@ -39,6 +44,7 @@ class Characteristic
     double stability_;  // How stable the characteristic is over time
 
     // 0) Add a static int field counter_, then modify Characteristic.cpp to initialize the field properly.
+    static int field_counter_;
     // Then, modify the Characteristic constructor so that every time a Characteristic is instantiated, counter_ is increased by one.
 
     // Then, add a static get_count function to the Characteristic class.
