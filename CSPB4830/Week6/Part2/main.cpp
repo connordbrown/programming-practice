@@ -10,12 +10,26 @@ int main()
 {
   // Part 1 (factory)
   // Questions 0, 1, 2, 3 are in Characteristic.h
-  
+
   // 4) get pointers to one of each type of your Characteristic objects via your CharacteristicFactory. // Then, call the Characteristic's get_count method to see how many Characteristic objects have been instantiated.
+  Characteristic* strength = CharacteristicFactory::GetStrength();
+  Characteristic* intelligence = CharacteristicFactory::GetIntelligence();
+  Characteristic* wisdom = CharacteristicFactory::GetWisdom();
+
+  std::cout << "Objects created: " << Characteristic::get_count() << std::endl;
 
   // 5) are your CharacteristicFactory's Get____() methods static or non-static? Do you think that they should be one or the other? Justify your answer.
+
+  // They are static methods. I think they should be static, because they abstract away/provide a wrapper for the implementation details of the Characteristic class.
+  // They are not maintaining class attributes/state, they are just creating objects. Also, I do not need to create an object to create other objects. It feels simpler.
+
   // If your methods are static, what would change if they were non-static?
+
+  // A CharacteristicFactory object would have to be instantiated, and then the methods called on the object.
+
   // If they are non-static, what would change if they were static?
+
+  // Would no longer need a CharacteristicFactory object. Methods could be called using the class itself.
 
   // 6) Feel free to create more Avatars here
   Avatar thor(23);
