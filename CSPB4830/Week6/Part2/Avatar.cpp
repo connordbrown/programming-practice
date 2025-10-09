@@ -20,3 +20,37 @@ void Avatar::TransferCharacteristics(Avatar* otherAvatar)
     }
   }
 }
+
+Avatar* Avatar::Clone()
+{
+  Avatar* clone = new Avatar(0);
+
+  // search for inherited characteristics
+  for (Characteristic* c : this->characteristics_) {
+    if (c->get_isInherited()) {
+      // make deep copy of inherited characteristic
+      Characteristic* inherited_copy = new Characteristic(*c);
+      // give inherited characteristic to clone
+      clone->AddCharacteristic(inherited_copy);
+    }
+  }
+
+  return clone;
+}
+
+Human* Human::Clone()
+{
+  Human* clone = new Human(0);
+
+  // search for non-inherited characteristics
+  for (Characteristic* c : this->get_characteristics()) {
+    if (!(c->get_isInherited())) {
+      // make deep copy of non-inherited characteristic
+      Characteristic* inherited_copy = new Characteristic(*c);
+      // give inherited characteristic to clone
+      clone->AddCharacteristic(inherited_copy);
+    }
+  }
+
+  return clone;
+}

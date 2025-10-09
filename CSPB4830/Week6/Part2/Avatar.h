@@ -21,7 +21,7 @@ class Avatar
     // 8) Create a virtual Avatar* Clone() method.
     // When an avatar is cloned, the clone starts at age 0
     // Characteristics that are hereditary should be inherited.
-
+    virtual Avatar* Clone();
 
   private:
     int currentAge_;  // Age of the Avatar
@@ -31,6 +31,15 @@ class Avatar
 // 9) Create 1 subclass of Avatar. For this subclass, make its cloning behavior slightly different.
 // For instance, some Cloned avatars might also inherit non-hereditary characteristics.
 // It's up to you!
+
+class Human : public Avatar {
+  public:
+    // constructor
+    Human(int currentAge) : Avatar(currentAge) {}
+
+    // overrride virtual clone method
+    Human* Clone() override;
+};
 
 // 10) In your main.cpp, instantiate your subclass. (the rest of the work for this part of the exercise will happen in main.)
 

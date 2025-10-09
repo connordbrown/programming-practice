@@ -33,24 +33,72 @@ int main()
 
   // 6) Feel free to create more Avatars here
   Avatar thor(23);
+  Avatar loki(21);
 
   // 7) Add a few characteristics to your Avatars. Test out the TransferCharacteristics method.
+  thor.AddCharacteristic(CharacteristicFactory::GetStrength());
+  thor.AddCharacteristic(CharacteristicFactory::GetWisdom());
 
+  loki.AddCharacteristic(CharacteristicFactory::GetIntelligence());
+  loki.AddCharacteristic(CharacteristicFactory::GetWisdom());
 
-  for (Characteristic *c : thor.get_characteristics() )
+  std::cout << "Thor given characteristics:" << std::endl;
+  for (Characteristic* c : thor.get_characteristics())
   {
     std::cout << *(c) << std::endl;
   }
 
+  std::cout << "Loki given characteristics:" << std::endl;
+  for (Characteristic* c : loki.get_characteristics())
+  {
+    std::cout << *(c) << std::endl;
+  }
 
+  std::cout << std::endl;
 
 
   // Part 2 (prototype)
   // // Questions 8, 9 and 10 are in Avatar.h
   // 11) Create some new Avatar * objects by using the Avatar's Clone() method. Does this method use dynamic dispatch?
-  // Answer:
+  // Answer: Yes
   // How did you test this?
 
+  // The Avatar clones only inherit hereditary characteristics, as seen by the output of the following code.
+  Avatar* thor_clone = thor.Clone();
+  Avatar* loki_clone = loki.Clone();
+
+  std::cout << "Thor clone characteristics:" << std::endl;
+  for (Characteristic* c : (*thor_clone).get_characteristics())
+  {
+    std::cout << *(c) << std::endl;
+  }
+
+  std::cout << "Loki clone characteristics:" << std::endl;
+  for (Characteristic* c : (*loki_clone).get_characteristics())
+  {
+    std::cout << *(c) << std::endl;
+  }
+
+  std::cout << std::endl;
+
+  // However, the Human clones only inherit non-hereditary characteristics, as seen by the output of the following code.
+  Human steve(25);
+  steve.AddCharacteristic(CharacteristicFactory::GetStrength());
+  steve.AddCharacteristic(CharacteristicFactory::GetIntelligence());
+
+  std::cout << "Steve given characteristics:" << std::endl;
+  for (Characteristic* c : steve.get_characteristics())
+  {
+    std::cout << *(c) << std::endl;
+  }
+
+  Human* steve_clone = steve.Clone();
+
+  std::cout << "Steve clone characteristics:" << std::endl;
+  for (Characteristic* c : (*steve_clone).get_characteristics())
+  {
+    std::cout << *(c) << std::endl;
+  }
 
 
 
