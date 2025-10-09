@@ -17,6 +17,7 @@ int main()
   Characteristic* wisdom = CharacteristicFactory::GetWisdom();
 
   std::cout << "Objects created: " << Characteristic::get_count() << std::endl;
+  std::cout << std::endl;
 
   // 5) are your CharacteristicFactory's Get____() methods static or non-static? Do you think that they should be one or the other? Justify your answer.
 
@@ -99,8 +100,6 @@ int main()
   {
     std::cout << *(c) << std::endl;
   }
-
-
 
 
   // If you finish:

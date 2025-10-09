@@ -47,7 +47,7 @@ Human* Human::Clone()
     if (!(c->get_isInherited())) {
       // make deep copy of non-inherited characteristic
       Characteristic* inherited_copy = new Characteristic(*c);
-      // give inherited characteristic to clone
+      // give non-inherited characteristic to clone
       clone->AddCharacteristic(inherited_copy);
     }
   }

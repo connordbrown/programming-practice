@@ -37,7 +37,7 @@ class Human : public Avatar {
     // constructor
     Human(int currentAge) : Avatar(currentAge) {}
 
-    // overrride virtual clone method
+    // override virtual Clone() method
     Human* Clone() override;
 };
 
