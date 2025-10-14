@@ -20,6 +20,6 @@ TileType* Tile::get_tile_type() const {
 
 // 6) fix the following function as emoji_ is no longer in Tile class
 std::ostream& operator<<(std::ostream& os, const Tile& tile) {
-    os << "Tile: ()" << tile.get_x() << ", " << tile.get_y() << "), " << tile.get_tile_type()->get_emoji();
+    os << tile.get_tile_type()->get_emoji();
     return os;
 }

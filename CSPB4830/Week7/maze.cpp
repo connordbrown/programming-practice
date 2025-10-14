@@ -57,6 +57,7 @@ int main()
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             //maze[i][j] = new Tile(i, j, // 9) call your factory method); // edit this specifically
+            maze[i][j] = new Tile(i, j, getTileType(layout[i][j]));
         }
     }
 
@@ -70,5 +71,11 @@ int main()
     }
 
     // 10) delete all pointers
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            delete maze[i][j];
+        }
+    }
+
     return 0;
 }
