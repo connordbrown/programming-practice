@@ -7,12 +7,16 @@ class Tile {
   public:
     Tile(int x, int y, TileType* type);
     // 2) add getters
+    int get_x();
+    int get_y();
+    TileType* get_tile_type();
 
     friend std::ostream& operator<<(std::ostream& os, const Tile& tile);
 
   private:
     int x_, y_;
     TileType* type_;
+
     // 1) Move the following attributes into a new class named TileType
       // std::string emoji_; // each tile has its own emoji
       // bool walkable_;

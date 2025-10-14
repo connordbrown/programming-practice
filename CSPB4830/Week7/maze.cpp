@@ -3,7 +3,7 @@
 #include "TileType.h"
 #include "Tile.h"
 
-// Name:
+// Name: Connor Brown
 
 // questions 1 and 2 in Tile.h
 // question 3 in TileType.h
@@ -20,11 +20,12 @@ TileType* getTileType(int index)
 
     // 7) hard coded to help you get started; add the remaining Tile types or implement as a factory class or better. Upto you
     if (types.empty()) {
-        types.push_back(new TileType("Wall", "🚧  ", false, false)); // 0
+        //types.push_back(new TileType("Wall", "🚧  ", false, false)); // 0
 
     }
 
     // 8) return the appropriate pointers
+    return nullptr;
     // Hint: what should you return if index is invalid?
 }
 
@@ -37,13 +38,14 @@ int main()
       {4, 2, 1, 0},
       {0, 0, 1, 2}
     };
+    
 
     Tile* maze[4][4];
 
     // create tiles to use flyweight via the factory method defined above
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            maze[i][j] = new Tile(i, j, // 9) call your factory method); // edit this specifically
+            //maze[i][j] = new Tile(i, j, // 9) call your factory method); // edit this specifically
         }
     }
 

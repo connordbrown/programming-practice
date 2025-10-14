@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Werror -Wpedantic
+CXXFLAGS = -std=c++17 -Wall -Wpedantic #-Werror 
 
 all: maze
 
