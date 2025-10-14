@@ -7,9 +7,9 @@ class Tile {
   public:
     Tile(int x, int y, TileType* type);
     // 2) add getters
-    int get_x();
-    int get_y();
-    TileType* get_tile_type();
+    int get_x() const;
+    int get_y() const;
+    TileType* get_tile_type() const;
 
     friend std::ostream& operator<<(std::ostream& os, const Tile& tile);
 
