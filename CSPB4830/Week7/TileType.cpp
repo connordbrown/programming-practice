@@ -3,7 +3,11 @@
 #include "TileType.h"
 
 // 4) implement methods
-TileType::TileType(std::string emoji, bool walkable, bool dangerous): emoji_(emoji), walkable_(walkable), dangerous_(dangerous) {}
+TileType::TileType(std::string name, std::string emoji, bool walkable, bool dangerous): name_(name), emoji_(emoji), walkable_(walkable), dangerous_(dangerous) {}
+
+std::string TileType::get_name() {
+    return this->name_;
+}
 
 std::string TileType::get_emoji() {
     return this->emoji_;

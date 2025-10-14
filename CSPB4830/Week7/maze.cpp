@@ -20,13 +20,24 @@ TileType* getTileType(int index)
 
     // 7) hard coded to help you get started; add the remaining Tile types or implement as a factory class or better. Upto you
     if (types.empty()) {
-        //types.push_back(new TileType("Wall", "🚧  ", false, false)); // 0
-
+        types.push_back(new TileType("Wall", "🚧", false, false)); // 0
+        types.push_back(new TileType("ClearPath", "⬜", true, false));
+        types.push_back(new TileType("Eleven", "👧", true, false));
+        types.push_back(new TileType("Demigorgon", "👾", true, true));
+        types.push_back(new TileType("Eggo", "🧇", true, false));
+        types.push_back(new TileType("WalkieTalkie", "📻", true, false));
+        types.push_back(new TileType("MindFlayerShard", "🧠", true, false));
+        types.push_back(new TileType("Trap", "🌀", false, true));
+        types.push_back(new TileType("Gate", "🚪", true, false));
     }
 
     // 8) return the appropriate pointers
-    return nullptr;
+    if (index >= 0 && index < types.size()) {
+        return types[index];
+    }
     // Hint: what should you return if index is invalid?
+    // default value - can use [] because already checked bounds
+    return types[0];
 }
 
 int main()
@@ -38,7 +49,7 @@ int main()
       {4, 2, 1, 0},
       {0, 0, 1, 2}
     };
-    
+
 
     Tile* maze[4][4];
 
